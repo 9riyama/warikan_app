@@ -23,7 +23,8 @@ class PostsController < ApplicationController
       gas_cost: params[:gas_cost],
       electric_cost: params[:electric_cost],
       water_cost: params[:water_cost],
-      user_id: @current_user.id
+      user_id: @current_user.id,
+      pay_date:  Time.zone.local(params[:pay_date]["date(1i)"].to_i, params[:pay_date]["date(2i)"].to_i, params[:pay_date]["date(3i)"].to_i)
     )
     
     @post.total_cost = @post.house_cost + @post.gas_cost + @post.electric_cost + @post.water_cost
