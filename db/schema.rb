@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190309123921) do
+ActiveRecord::Schema.define(version: 20190309144651) do
 
   create_table "posts", force: :cascade do |t|
     t.text "content"
@@ -22,6 +22,9 @@ ActiveRecord::Schema.define(version: 20190309123921) do
     t.integer "electric_cost"
     t.integer "water_cost"
     t.integer "total_cost"
+    t.integer "user_total_cost"
+    t.integer "partner_total_cost"
+    t.string "pay_name"
   end
 
   create_table "users", force: :cascade do |t|

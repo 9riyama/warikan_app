@@ -9,7 +9,8 @@
               <%= message %>
             </div>
           <% end %>
-          
+          <p>支払者</p>
+          <%= select_tag 'pay_name', options_for_select([@current_user.name, "パートナー"]) %>
           <textarea name="content"><%= @post.content %></textarea>
           <p>家賃代</p>
           <input type="tel" name="house_cost"/>

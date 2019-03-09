@@ -18,6 +18,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(
       name: params[:name],
+      partner_name: "パートナー",
       email: params[:email],
       image_name: "default_user.jpg",
       password: params[:password]
