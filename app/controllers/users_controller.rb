@@ -55,6 +55,17 @@ class UsersController < ApplicationController
     end
   end
   
+  def pay_index
+    @user = User.find_by(id: params[:id])
+    @pay_index = @user.month_posts
+  end
+  
+  def posts_show  #　ここを修正する
+    @user = User.find(params[:id])
+    @yyyymm = params[:pay_date]  
+  end
+  
+  
   def login_form
   end
   

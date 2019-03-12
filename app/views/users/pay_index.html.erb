@@ -13,16 +13,10 @@
       <li class="active"><%= link_to("投稿", "/users/#{@user.id}") %></li>
     </ul>
     
-    <% @user.posts.each do |post| %>
+    <% @pay_index.each do |f| %>
       <div class="posts-index-item">
-        <div class="post-left">
-          <img src="<%= "/user_images/#{post.user.image_name}" %>">
-        </div>
         <div class="post-right">
-          <div class="post-user-name">
-            <%= link_to(post.user.name, "/users/#{post.user.id}") %>
-          </div>
-          <%= link_to("#{post.pay_date}", "/posts/#{post.id}") %>
+          <%= link_to(f.pay_date.strftime('%Y年%-m月の生活費'),"/users/#{@user.id}/posts/#{f.pay_date}") %>
         </div>
       </div>
     <% end %>
