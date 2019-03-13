@@ -19,22 +19,13 @@ class PostsController < ApplicationController
     @post = Post.new(
       pay_name: params[:pay_name],
       content: params[:content],
-      house_cost: params[:house_cost],
-      gas_cost: params[:gas_cost],
-      electric_cost: params[:electric_cost],
-      water_cost: params[:water_cost],
+      payment: params[:payment],
       user_id: @current_user.id,
-      pay_date:  Time.zone.local(params[:pay_date]["date(1i)"].to_i, params[:pay_date]["date(2i)"].to_i, params[:pay_date]["date(3i)"].to_i)
+      pay_date:  Time.zone.local(params[:pay_date]["date(1i)"].to_i, 
+                                 params[:pay_date]["date(2i)"].to_i, 
+                                 params[:pay_date]["date(3i)"].to_i)
     )
     
-    @post.total_cost = @post.house_cost + @post.gas_cost + @post.electric_cost + @post.water_cost
-    
-    if @post.pay_name == @current_user.name
-      @post.user_total_cost = @post.house_cost + @post.gas_cost + @post.electric_cost + @post.water_cost
-    else
-      @post.partner_total_cost = @post.house_cost + @post.gas_cost + @post.electric_cost + @post.water_cost 
-    end
-     
     if @post.save
       flash[:notice] = "投稿を作成しました"
       redirect_to("/posts/index")

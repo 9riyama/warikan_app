@@ -13,15 +13,10 @@
           <%= select_tag 'pay_name', options_for_select([@current_user.name, "パートナー"]) %>
           <p>支払月</p>
           <%= date_select :pay_date, :date, :discard_day => true, :use_month_numbers => true %>
+          <p>支払代</p>
+          <input type="tel" name="payment"/>
+          <p>メモ</p>
           <textarea name="content"><%= @post.content %></textarea>
-          <p>家賃代</p>
-          <input type="tel" name="house_cost"/>
-          <p>ガス代</p>
-          <input type="tel" name="gas_cost"/>
-          <p>電気代</p>
-          <input type="tel" name="electric_cost"/>
-          <p>水道代</p>
-          <input type="tel" name="water_cost"/>
           <input type="submit" value="投稿">
         </div>
       </div>

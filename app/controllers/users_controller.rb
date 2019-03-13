@@ -61,8 +61,14 @@ class UsersController < ApplicationController
   end
   
   def posts_show  #　ここを修正する
-    @user = User.find(params[:id])
-    @yyyymm = params[:pay_date]  
+  @user = User.find_by(id: params[:id])
+  @posts = Post.where(user_id: params[:id]).where(pay_date: params[:pay_date])
+  @total = @posts.sum("payment")
+  @warikan = @total / 2
+  @user_total = @posts.where(pay_name: @current_user).sum("payment")
+  @user_pay = @user_total - @warikan
+  @partner_total = @posts.where(pay_name: "パートナー").sum("payment")
+  @partner_pay = @partner_total - @warikan
   end
   
   

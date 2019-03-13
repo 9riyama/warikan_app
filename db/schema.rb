@@ -10,22 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190309151051) do
+ActiveRecord::Schema.define(version: 20190313130216) do
 
   create_table "posts", force: :cascade do |t|
     t.text "content"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "house_cost"
-    t.integer "gas_cost"
-    t.integer "electric_cost"
-    t.integer "water_cost"
-    t.integer "total_cost"
-    t.integer "user_total_cost"
-    t.integer "partner_total_cost"
     t.string "pay_name"
     t.date "pay_date"
+    t.integer "payment"
   end
 
   create_table "users", force: :cascade do |t|

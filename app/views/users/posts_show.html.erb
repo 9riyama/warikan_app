@@ -1,2 +1,19 @@
-<%= @user.posts %>
-<%= @yyyymm %>
+<div class="main posts-show">
+  <div class="container">
+    <div class="posts-show-item">
+      <div class="post-user-name">
+        <img src="<%= "/user_images/#{@user.image_name}" %>">
+        <%= link_to(@user.name, "/users/#{@user.id}") %>
+      </div>
+      <p><%= "生活費合計：#{@total}円" %></p>
+      <p><%= "ひとりあたり：#{@warikan}円" %></p>
+      <p><% if @user_total > @partner_total %>></p>
+           <P><%= "あたなはパートナーから#{@user_pay}円もらってね" %></P>
+           <P><%= "パートナーはあなたに#{@user_pay}円あげてね" %></P>
+         <% else %>
+           <P><%= "あたなはパートナーに#{@partner_pay}円あげてね" %></P>
+           <P><%= "パートナーはあなたから#{@partner_pay}円もらってね" %></P>
+         <% end %>
+    </div>
+  </div>
+</div>
