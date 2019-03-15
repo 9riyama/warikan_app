@@ -5,7 +5,7 @@
         <img src="<%= "/user_images/#{@user.image_name}" %>">
         <%= link_to(@user.name, "/users/#{@user.id}") %>
       </div>
-      <p><%= "#{@posts[0].pay_date.strftime('%Y年%-m月')}生活費合計：#{@total}円" %></p>
+      <p><%= "#{@posts[0].pay_month.strftime('%Y年%-m月')}生活費合計：#{@total}円" %></p>
       <p><%= "ひとりあたり：#{@warikan}円" %></p>
       <p><% if @user_total > @partner_total %>></p>
            <P><%= "あたなはパートナーから#{@user_pay}円もらってね" %></P>

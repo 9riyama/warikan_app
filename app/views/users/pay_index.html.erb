@@ -16,7 +16,7 @@
     <% @pay_index.each do |f| %>
       <div class="posts-index-item">
         <div class="post-right">
-          <%= link_to(f.pay_date.strftime('%Y年%-m月の生活費'),"/users/#{@user.id}/posts/#{f.pay_date}") %>
+          <%= link_to(f.pay_month.strftime('%Y年%-m月の生活費'),"/users/#{@user.id}/posts/#{f.pay_month}") %>
         </div>
       </div>
     <% end %>

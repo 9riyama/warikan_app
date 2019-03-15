@@ -21,9 +21,9 @@ class PostsController < ApplicationController
       content: params[:content],
       payment: params[:payment],
       user_id: @current_user.id,
-      pay_date:  Time.zone.local(params[:pay_date]["date(1i)"].to_i, 
-                                 params[:pay_date]["date(2i)"].to_i, 
-                                 params[:pay_date]["date(3i)"].to_i)
+      pay_month:  Time.zone.local(params[:pay_month]["date(1i)"].to_i, 
+                                 params[:pay_month]["date(2i)"].to_i, 
+                                 params[:pay_month]["date(3i)"].to_i)
     )
     
     if @post.save

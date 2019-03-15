@@ -22,7 +22,7 @@
           <div class="post-user-name">
             <%= link_to(post.user.name, "/users/#{post.user.id}") %>
           </div>
-          <%= link_to("#{post.pay_date}", "/posts/#{post.id}") %>
+          <%= link_to("#{post.pay_month}", "/posts/#{post.id}") %>
         </div>
       </div>
     <% end %>

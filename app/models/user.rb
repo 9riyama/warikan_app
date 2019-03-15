@@ -11,7 +11,7 @@ class User < ApplicationRecord
   end
   
   def month_posts
-    return Post.where(user_id: self.id).group("pay_date").order(pay_date: "desc")
+    return Post.where(user_id: self.id).group("pay_month").order(pay_month: "desc")
   end
   
   

@@ -12,7 +12,7 @@
           <p>支払者</p>
           <%= select_tag 'pay_name', options_for_select([@current_user.name, "パートナー"]) %>
           <p>支払月</p>
-          <%= date_select :pay_date, :date, :discard_day => true, :use_month_numbers => true %>
+          <%= date_select :pay_month, :date, :discard_day => true, :use_month_numbers => true %>
           <p>支払代</p>
           <input type="tel" name="payment"/>
           <p>メモ</p>

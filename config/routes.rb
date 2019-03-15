@@ -1,12 +1,11 @@
 Rails.application.routes.draw do
   
-  get "users/:id/posts/:pay_date" => "users#posts_show"
+  get "users/:id/posts/:pay_month" => "users#monthly_total"
   get  "users/:id/pay_index" => "users#pay_index"
   post "users/:id/update" => "users#update"
   get "users/:id/edit" => "users#edit"
   post "users/create" => "users#create"
   get "signup" => "users#new"
-  get "users/index" => "users#index"
   get "users/:id" => "users#show"
   post "login" => "users#login"
   post "logout" => "users#logout"
