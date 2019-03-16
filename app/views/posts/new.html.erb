@@ -10,9 +10,11 @@
             </div>
           <% end %>
           <p>支払者</p>
-          <%= select_tag 'pay_name', options_for_select([@current_user.name, "パートナー"]) %>
+          　<%= select_tag 'pay_name', options_for_select([@current_user.name, "パートナー"]) %>
           <p>支払月</p>
-          <%= date_select :pay_month, :date, :discard_day => true, :use_month_numbers => true %>
+          　<%= date_select :pay_month, :date, :discard_day => true, :use_month_numbers => true %>
+          <p>カテゴリ</p>
+            <%= collection_select(:categories_id,:keys, Category.all, :id, :name,:prompt => "選択してください") %>
           <p>支払代</p>
           <input type="tel" name="payment"/>
           <p>メモ</p>

@@ -3,9 +3,12 @@ class Post < ApplicationRecord
   validates :user_id, {presence: true}
   
   belongs_to :holder ,class_name: 'User',foreign_key: 'user_id'
-  
+  belongs_to :Category,optional: true
+
   def user
     return User.find_by(id: self.user_id)
   end
+  
+
   
 end

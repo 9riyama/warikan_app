@@ -10,7 +10,8 @@
             <%= link_to(post.pay_month.strftime('%Y年%-m月'), "/users/#{post.user.id}") %>
           </div>
           <%= link_to("支払者： 
-          #{post.pay_name} 支払額： #{post.payment}円", "/posts/#{post.id}") %>
+          #{post.pay_name} 支払額： #{post.payment}円
+          カテゴリ： #{post.categories_id}", "/posts/#{post.id}") %>
         </div>
       </div>
     <% end %>
