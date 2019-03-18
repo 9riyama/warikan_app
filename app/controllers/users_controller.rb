@@ -21,6 +21,7 @@ class UsersController < ApplicationController
       partner_name: "パートナー",
       email: params[:email],
       image_name: "default_user.jpg",
+      image_partner: "default_partner.jpg",
       password: params[:password]
     )
     if @user.save
@@ -41,10 +42,16 @@ class UsersController < ApplicationController
     @user.name = params[:name]
     @user.email = params[:email]
     
-    if params[:image]
+    if params[:image_name]
       @user.image_name = "#{@user.id}.jpg"
-      image = params[:image]
+      image = params[:image_name]
       File.binwrite("public/user_images/#{@user.image_name}", image.read)
+    end
+    
+    if params[:image_partner]
+      @user.image_partner = "#{@user.partner_name}.jpg"
+      image = params[:image_partner]
+      File.binwrite("public/user_images/#{@user.image_partner}", image.read)
     end
     
     if @user.save

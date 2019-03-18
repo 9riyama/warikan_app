@@ -2,19 +2,18 @@
   <div class="container">
     <div class="posts-show-item">
       <div class="post-user-name">
-        <img src="<%= "/user_images/#{@user.image_name}" %>">
-        <%= link_to(@user.name, "/users/#{@user.id}") %>
+        <p>月別家計簿</P>
       </div>
       <p><%= "■#{@posts[0].pay_month.strftime('%Y年%-m月')}生活費合計：#{@total}円" %></p>
-      <p><%= "■ひとりあたり：#{@warikan}円" %></p>
-      <P><%= "#{@user.name}支払額合計：#{@user_total}円" %></P>
-      <P><%= "#{@user.partner_name}支払額合計：#{@partner_total}円" %></P>
-      <p><% if @user_total > @partner_total %>></p>
+      <p><%= "■ひとりあたり：#{@warikan}円" %>
+      <P><img src="<%= "/user_images/#{@user.image_name}" %>"><%= " #{@user.name}支払額合計：#{@user_total}円" %></P>
+      <P><img src="<%= "/user_images/#{@user.image_partner}" %>"><%= " #{@user.partner_name}支払額合計：#{@partner_total}円" %></P>
+            <p><% if @user_total > @partner_total %>></p>
            <P><%= "パートナーはあなたに#{@user_pay}円渡してね" %></P>
          <% else %>
            <P><%= "あたなはパートナーに#{@partner_pay}円渡してね" %></P>
          <% end %>
-         <%= pie_chart @chart %>
+        <%= pie_chart @chart %></p>
     </div>
   </div>
 </div>

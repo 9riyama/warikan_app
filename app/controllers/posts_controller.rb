@@ -11,6 +11,7 @@ class PostsController < ApplicationController
     @user = @post.user
   end
   
+  
   def new
     @post = Post.new
   end

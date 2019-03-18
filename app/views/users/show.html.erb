@@ -2,11 +2,13 @@
   <div class="container">
     <div class="user">
       <img src="<%= "/user_images/#{@user.image_name}" %>">
+      <img src="<%= "/user_images/#{@user.image_partner}" %>">
+      <% if @user.id == @current_user.id %>
+        <P><%= link_to("編集", "/users/#{@user.id}/edit") %></P>
+      <% end %>
       <h2><%= @user.name %></h2>
       <p><%= @user.email %></p>
-      <% if @user.id == @current_user.id %>
-        <%= link_to("編集", "/users/#{@user.id}/edit") %>
-      <% end %>
+
     </div>
     
     <ul class="user-tabs">

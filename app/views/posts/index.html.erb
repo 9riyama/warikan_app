@@ -3,13 +3,17 @@
     <% @posts.each do |post| %>
       <div class="posts-index-item">
         <div class="post-left">
-          <img src="<%= "/user_images/#{post.user.image_name}" %>">
+          <% if post.pay_name == @current_user.name %>
+            <img src="<%= "/user_images/#{post.user.image_name}" %>">
+          <% else %>
+            <img src="<%= "/user_images/#{post.user.image_partner}" %>">
+          <% end %>
         </div>
         <div class="post-right">
           <div class="post-user-name">
             <%= link_to(post.pay_month.strftime('%Y年%-m月'), "/users/#{post.user.id}") %>
           </div>
-          <%= link_to("支払者： 
+          #<%= link_to("支払者： 
           #{post.pay_name} 支払額： #{post.payment}円
           カテゴリ： #{post.categories_id}", "/posts/#{post.id}") %>
         </div>

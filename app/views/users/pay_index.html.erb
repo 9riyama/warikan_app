@@ -1,16 +1,7 @@
 <div class="main user-show">
   <div class="container">
-    <div class="user">
-      <img src="<%= "/user_images/#{@user.image_name}" %>">
-      <h2><%= @user.name %></h2>
-      <p><%= @user.email %></p>
-      <% if @user.id == @current_user.id %>
-        <%= link_to("編集", "/users/#{@user.id}/edit") %>
-      <% end %>
-    </div>
-    
     <ul class="user-tabs">
-      <li class="active"><%= link_to("投稿", "/users/#{@user.id}") %></li>
+      <li class="active"><%= link_to("月別生活費", "/users/#{@user.id}") %></li>
     </ul>
     
     <% @pay_index.each do |f| %>
