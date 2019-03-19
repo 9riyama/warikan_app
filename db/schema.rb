@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190318123259) do
+ActiveRecord::Schema.define(version: 20190319115056) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20190318123259) do
     t.date "pay_month"
     t.integer "payment"
     t.integer "categories_id"
+    t.index ["categories_id"], name: "index_posts_on_categories_id"
   end
 
   create_table "users", force: :cascade do |t|

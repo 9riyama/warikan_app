@@ -40,6 +40,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find_by(id: params[:id])
     @user.name = params[:name]
+    @user.partner_name = params[:partner_name]
     @user.email = params[:email]
     
     if params[:image_name]
