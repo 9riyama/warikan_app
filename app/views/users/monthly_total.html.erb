@@ -4,16 +4,20 @@
     <div class="posts-show-item">
       <div class="post-user-name">
       </div>
-      <p><%= "・#{@posts[0].pay_month.strftime('%Y年%-m月')}生活費合計：#{@total}円" %></p>
-      <p><%= "・一人当たり：#{@warikan}円" %>
+      <p><%= "・#{@posts[0].pay_month.strftime('%Y年%-m月')}生活費合計：#{@total.to_s(:delimited)}円" %></p>
       <P><img src="<%= "/user_images/#{@user.image_name}" %>">
-      <%= " #{@user.name} 支払額合計：#{@user_total}円" %></P>
+      <%= " #{@user.name} 支払額合計：#{@user_total.to_s(:delimited)}円" %></P>
       <P><img src="<%= "/user_images/#{@user.image_partner}" %>">
-      <%= " #{@user.partner_name} 支払額合計：#{@partner_total}円" %></P>
+      <%= " #{@user.partner_name} 支払額合計：#{@partner_total.to_s(:delimited)}円" %></P>
+      <p><%= "　ワリカンすると？一人当たり：#{@warikan.to_s(:delimited)}円" %>
             <p><% if @user_total > @partner_total %></p>
-           <P><%= "【#{@user.partner_name}】は【#{@user.name}】に#{@user_pay}円渡してね" %></P>
+           <P><img src="<%= "/user_images/#{@user.image_partner}" %>">
+              <%= "【#{@user.partner_name}】は"%></p>
+           <P><img src="<%= "/user_images/#{@user.image_name}" %>">
+              <%= "【#{@user.name}】に#{@user_pay.to_s(:delimited)}円渡してね" %></P>
          <% else %>
-           <P><%= "#{@user.name}は{@user.partner_name}に#{@partner_pay}円渡してね" %></P>
+           <P><img src="<%= "/user_images/#{@user.image_name}" %>"><%= "#{@user.name}は" %></p>
+           <P><%= "{@user.partner_name}に#{@partner_pay.to_s(:delimited)}円渡してね" %></P>
          <% end %>
         <%= pie_chart @chart %></p>
     </div>
