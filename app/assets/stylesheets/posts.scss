@@ -35,6 +35,26 @@
 }
 
 /* posts/show ================================ */
+.container-posts {
+  max-width: 900px;
+  margin: 50px auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  clear: both;
+}
+
+.box3 {
+    color: white;
+    background: #94bbd1;/*背景色*/
+    text-align: center;
+    border: solid 0.1px #94bbd1;/*線*/
+    border-radius: 10px;/*角の丸み*/
+}
+.box3 p {
+    margin: 0; 
+    padding: 0;
+}
+
 .posts-show form {
   display: inline;
 }
@@ -44,6 +64,18 @@
   background-color: white;
   box-shadow: 0 2px 6px #c1ced7;
   overflow: hidden;
+  display: flex;
+}
+
+.posts-show-left{
+  flex: 1;
+  
+}
+
+.posts-show-right{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .posts-show-item img {
