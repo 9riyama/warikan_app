@@ -4,7 +4,7 @@
     <div class="posts-show-item">
       <div class="posts-show-left">
         <div class="box3">
-          <p><%= "#{@posts[0].pay_month.strftime('%Y年%-m月')}生活費合計：#{@total.to_s(:delimited)}円" %></p>
+          <p><%= "#{@posts[0].pay_month.to_s(:month)}生活費合計：#{@total.to_s(:delimited)}円" %></p>
         </div>
           <P><img src="<%= "/user_images/#{@user.image_name}" %>">
              <%= " #{@user.name} 支払額合計：#{@user_total.to_s(:delimited)}円" %></P>
