@@ -8,30 +8,25 @@
       <% end %>
       <h2><%= @user.name %></h2>
       <p><%= @user.email %></p>
+
     </div>
     
     <ul class="user-tabs">
       <li class="active"><%= link_to("投稿", "/users/#{@user.id}") %></li>
     </ul>
     
-    <% @users.each do |post| %>
+    <% @user.posts.each do |post| %>
       <div class="posts-index-item">
         <div class="post-left">
-          <% if post.pay_name == @current_user.name %>
-            <img src="<%= "/user_images/#{post.user.image_name}" %>">
-          <% else %>
-            <img src="<%= "/user_images/#{post.user.image_partner}" %>">
-          <% end %>
+          <img src="<%= "/user_images/#{post.user.image_name}" %>">
         </div>
         <div class="post-right">
           <div class="post-user-name">
-            <%= post.pay_name %>
+            <%= link_to(post.user.name, "/users/#{post.user.id}") %>
           </div>
-          <%= link_to("#{post.pay_month.strftime('%Y年%-m月')} 支払金額#{post.payment.to_s(:delimited)}円", "/posts/#{post.id}") %>
+          <%= link_to("#{post.pay_month}", "/posts/#{post.id}") %>
         </div>
       </div>
     <% end %>
-    <%= paginate @users %>
-
   </div>
 </div>

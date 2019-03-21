@@ -6,9 +6,11 @@ class UsersController < ApplicationController
   def index
     @users = User.all
   end
+
   
   def show
-    @user = User.find_by(id: params[:id])
+    @user = User.find(params[:id])
+    @users = @user.posts.page(params[:page]).per(5).order('updated_at DESC')
   end
   
   def new
