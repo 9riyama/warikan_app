@@ -5,6 +5,7 @@ class User < ApplicationRecord
   validates :email, {presence: true, uniqueness: true}
   
   has_many :posts 
+  has_many :categories, through: :posts
   
   def posts
     return Post.where(user_id: self.id)

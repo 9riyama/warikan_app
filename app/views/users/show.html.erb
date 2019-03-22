@@ -27,10 +27,11 @@
           <div class="post-user-name">
             <%= post.pay_name %>
           </div>
-          <%= link_to("#{post.pay_month.to_s(:month)} 支払金額#{post.payment.to_s(:delimited)}円", "/posts/#{post.id}") %>
+          <%= link_to("#{post.pay_month.to_s(:month)} 支払金額#{post.payment.to_s(:delimited)}円 カテゴリ：", "/posts/#{post.id}") %>
         </div>
       </div>
     <% end %>
+    
     <%= paginate @users %>
 
   </div>

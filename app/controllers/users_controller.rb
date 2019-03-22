@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :authenticate_user, {only: [:index, :show, :edit, :update]}
   before_action :forbid_login_user, {only: [:new, :create, :login_form, :login]}
-  before_action :ensure_correct_user, {only: [:edit, :update]}
+  before_action :ensure_correct_user, {only: [:show, :month_index, :monthly_total,:edit, :update]}
   
   def index
     @users = User.all
@@ -52,7 +52,7 @@ class UsersController < ApplicationController
     end
     
     if params[:image_partner]
-      @user.image_partner = "#{@user.partner_name}.jpg"
+      @user.image_partner = "#{@user.id}_1.jpg"
       image = params[:image_partner]
       File.binwrite("public/user_images/#{@user.image_partner}", image.read)
     end
@@ -65,9 +65,9 @@ class UsersController < ApplicationController
     end
   end
   
-  def pay_index
+  def month_index
     @user = User.find_by(id: params[:id])
-    @pay_index = @user.month_posts
+    @month_index = @user.month_posts
   end
   
   def monthly_total
@@ -112,7 +112,7 @@ class UsersController < ApplicationController
   def ensure_correct_user
     if @current_user.id != params[:id].to_i
       flash[:notice] = "権限がありません"
-      redirect_to("/posts/index")
+      redirect_to("/users/#{@current_user.id}")
     end
   end
   

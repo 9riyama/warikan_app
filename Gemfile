@@ -14,6 +14,7 @@ gem 'chartable'
 gem 'kaminari', '~> 0.17.0'
 gem 'kaminari-bootstrap', '~> 3.0.1'
 gem 'bootstrap-sass'
+gem 'rails-i18n'
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'
