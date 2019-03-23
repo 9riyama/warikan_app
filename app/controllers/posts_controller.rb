@@ -22,7 +22,7 @@ class PostsController < ApplicationController
       content: params[:content],
       payment: params[:payment],
       user_id: @current_user.id,
-      categories_id: params[:categories_id][:keys].to_i, 
+      category_id: params[:category_id][:keys].to_i, 
       pay_month:  Time.zone.local(params[:pay_month]["date(1i)"].to_i, 
                                  params[:pay_month]["date(2i)"].to_i, 
                                  params[:pay_month]["date(3i)"].to_i)

@@ -14,7 +14,7 @@
           <p>支払月</p>
             <p><%= date_select :pay_month, :date, :discard_day => true, :use_month_numbers => true %></p>
           <p>カテゴリ</p>
-            <%= collection_select(:categories_id,:keys, Category.all, :id, :name,:prompt => "選択してください") %>
+            <%= collection_select(:category_id,:keys, Category.all, :id, :name,:prompt => "選択してください") %>
           <p>支払金額</p>
             <input type="tel" name="payment" style="width:30%;height:30px;"  />
           <p>メモ</p>
