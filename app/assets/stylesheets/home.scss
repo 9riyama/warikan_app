@@ -38,7 +38,7 @@ form input[type="submit"] {
 /* 共通レイアウト ================================ */
 body {
   color: #2d3133;
-  background-color: #228ac1;
+  background-color: #e84310;
   margin: 0;
   min-height: 1vh;
 }
@@ -123,7 +123,7 @@ header {
   height: auto;
   min-height: 100%;
   color: white;
-  background-color: #228ac1;
+  background-color: #e84310;
   background-repeat: no-repeat;
   background-position: center 50%;
   background-size: cover;
@@ -218,7 +218,7 @@ header {
 }
 
 .form input[type="submit"] {
-  background-color: #228ac1;
+  background-color: #e84310;
   color: white;
   cursor: pointer;
   font-weight: 300;
