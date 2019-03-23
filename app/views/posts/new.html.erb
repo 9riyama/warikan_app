@@ -16,7 +16,7 @@
           <p>カテゴリ</p>
             <%= collection_select(:category_id,:keys, Category.all, :id, :name,:prompt => "選択してください") %>
           <p>支払金額</p>
-            <input type="tel" name="payment" style="width:30%;height:30px;"  />
+            <input type="tel" name="payment" style="width:30%;height:30px;" />
           <p>メモ</p>
             <textarea name="content"><%= @post.content %></textarea>
             <input type="submit" value="投稿">

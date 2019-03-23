@@ -2,10 +2,13 @@
   <div class="container">
     <div class="posts-show-item">
       <div class="post-user-name">
-        <img src="<%= "/user_images/#{@user.image_name}" %>">
-        <%= link_to(@user.name, "/users/#{@user.id}") %>
+        <% if @post.pay_name == @current_user.name %>
+          <img src="<%= "/user_images/#{@post.user.image_name}" %>">
+        <% else %>
+          <img src="<%= "/user_images/#{@post.user.image_partner}" %>">
+        <% end %>
+        <%= link_to(@post.pay_name, "/users/#{@user.id}") %>
       </div>
-      <p><%= "支払者：#{@post.pay_name}" %></p>
       <p><%= "カテゴリ：#{@post.category.name}" %></p>
       <p><%= "支払額：#{@post.payment}円" %></p>
       <p><%= "メモ：#{@post.content}" %></p>
