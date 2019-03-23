@@ -11,8 +11,8 @@
     </div>
     
     <ul class="user-tabs">
-      <li class="active"><%= link_to(@user.name, "/users/#{@user.id}") %></li>
-      <li><%= link_to(@user.partner_name, "/users/#{@user.id}/partner_pay") %></li>
+      <li><%= link_to(@user.name, "/users/#{@user.id}") %></li>
+      <li class="active"><%= link_to(@user.partner_name, "/users/#{@user.id}/partner_pay") %></li>
     </ul>
     
     <% @users.each do |post| %>

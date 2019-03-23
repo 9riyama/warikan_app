@@ -10,7 +10,12 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
-    @users = @user.posts.page(params[:page]).per(5).order('updated_at DESC')
+    @users = @user.posts.page(params[:page]).per(5).where(pay_name: @user.name).order('updated_at DESC')
+  end
+  
+  def partner_pay
+    @user = User.find(params[:id])
+    @users = @user.posts.page(params[:page]).per(5).where(pay_name: @user.partner_name).order('updated_at DESC')
   end
   
   def new
