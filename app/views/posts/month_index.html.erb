@@ -1,0 +1,18 @@
+<div class="main user-show">
+  <div class="container">
+    <ul class="user-tabs">
+      <li class="active"><%= link_to("月別生活費", "/users/#{@current_user.id}") %></li>
+    </ul>
+    
+    <% @monthly_posts.each do |f| %>
+      <div class="posts-index-item">
+        <div class="post-left">
+          <img src="<%= "/user_images/doller_b.png" %>">
+        </div>
+          <div class="post-right">
+            <%= link_to("#{f.pay_month.to_s(:month)}の生活費","/posts/#{@current_user.id}/month/#{f.pay_month}") %>
+          </div>
+      </div>
+    <% end %>
+  </div>
+</div>

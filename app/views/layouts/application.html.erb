@@ -12,7 +12,7 @@
     <header>
       <div class="header-logo">
         <% if @current_user %>
-          <%= link_to("ワリカンパートナー", "/posts/index") %>
+          <%= link_to("ワリカンパートナー", "/posts/index/#{@current_user.id}") %>
         <% else %>
           <%= link_to("ワリカンパートナー", "/") %>
         <% end %>
@@ -28,7 +28,9 @@
           <li>
           <%= link_to "月別生活費", "/users/#{@current_user.id}/month_index" %>
           </li>
-
+          <li>
+          <%= link_to "post月別生活費", "/posts/month_index/#{@current_user.id}" %>
+          </li>
           <li>
             <%= link_to("新規投稿", "/posts/new") %>
           </li>

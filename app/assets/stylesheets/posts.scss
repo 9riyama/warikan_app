@@ -54,27 +54,12 @@
     padding: 0;
 }
 
-.posts-show form {
-  display: inline;
-}
 
 .posts-show-item {
   padding: 30px;
   background-color: white;
   box-shadow: 0 2px 6px #c1ced7;
   overflow: hidden;
-  display: flex;
-}
-
-.posts-show-left{
-  flex: 1;
-  
-}
-
-.posts-show-right{
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .posts-show-item img {
@@ -137,4 +122,46 @@
 .posts-new textarea::-webkit-input-placeholder {
   font-size: 24px;
   opacity: 0.5;
+}
+
+/* users/monthly_total ================================ */
+
+.monthly-show-item {
+  padding: 30px;
+  background-color: white;
+  box-shadow: 0 2px 6px #c1ced7;
+  overflow: hidden;
+  display: flex;
+}
+
+.monthly-show-left{
+  flex: 1;
+}
+
+
+
+.monthly-show-right{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.monthly-show-item img {
+  width: 60px;
+  height: 60px;
+  border-radius: 40%;
+  box-shadow: 0 2px 6px #c1ced7;
+  vertical-align: middle;
+  object-fit: cover;
+}
+
+.monthly-show-item .post-user-name a {
+  vertical-align: middle;
+  font-size: 24px;
+  margin-left: 15px;
+}
+
+.monthly-show-item p {
+  font-size: 24px;
+  margin: 20px 0;
 }

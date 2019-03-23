@@ -5,13 +5,10 @@
         <img src="<%= "/user_images/#{@user.image_name}" %>">
         <%= link_to(@user.name, "/users/#{@user.id}") %>
       </div>
-      <p>
-        <%= @post.content %>
-      </p>
-      <p>
-      <p>
-        <%= "あなたの支払額は#{@post.payment}円" %>
-      </p>
+      <p><%= "支払者：#{@post.pay_name}" %></p>
+      <p><%= "カテゴリ：#{@post.category.name}" %></p>
+      <p><%= "支払額：#{@post.payment}円" %></p>
+      <p><%= "メモ：#{@post.content}" %></p>
 
       <div class="post-time">
         <%= @post.created_at.strftime("%Y-%m-%d %H:%M") %>
