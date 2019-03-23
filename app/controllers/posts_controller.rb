@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   before_action :ensure_correct_user, {only: [:edit, :update, :destroy]}
   
   def index
-    @posts = Post.page(params[:page]).per(5).where(user_id: params[:id]).order('updated_at DESC')
+    @posts = Post.page(params[:page]).per(5).where(user_id: params[:id]).order('pay_month DESC').order('updated_at DESC')
   end
   
   def show
@@ -60,7 +60,7 @@ class PostsController < ApplicationController
     @post.content = params[:content]
     if @post.save
       flash[:notice] = "投稿を編集しました"
-      redirect_to("/posts/index")
+      redirect_to("/posts/index/#{@current_user.id}")
     else
       render("posts/edit")
     end
@@ -70,14 +70,14 @@ class PostsController < ApplicationController
     @post = Post.find_by(id: params[:id])
     @post.destroy
     flash[:notice] = "投稿を削除しました"
-    redirect_to("/posts/index")
+    redirect_to("/posts/index/#{@current_user.id}")
   end
   
   def ensure_correct_user
     @post = Post.find_by(id: params[:id])
     if @post.user_id != @current_user.id
       flash[:notice] = "権限がありません"
-      redirect_to("/posts/index")
+      redirect_to("/posts/index/#{@current_user.id}")
     end
   end
   
