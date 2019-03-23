@@ -23,7 +23,7 @@
             <%= link_to(@current_user.name, "/users/#{@current_user.id}") %>
           </li>
           <li>
-            <%= link_to("投稿一覧", "/posts/index") %>
+            <%= link_to("投稿一覧", "/posts/index/#{@current_user.id}") %>
           </li>
           <li>
           <%= link_to "月別生活費", "/users/#{@current_user.id}/month_index" %>

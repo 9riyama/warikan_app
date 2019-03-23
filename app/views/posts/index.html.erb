@@ -13,9 +13,9 @@
           <div class="post-user-name">
             <%= link_to(post.pay_month.strftime('%Y年%-m月'), "/users/#{post.user.id}") %>
           </div>
-          #<%= link_to("支払者： 
+          <%= link_to("支払者： 
           #{post.pay_name} 支払額： #{post.payment}円
-          カテゴリ： #{post.category_id}", "/posts/#{post.id}") %>
+          カテゴリ： #{post.category.name}", "/posts/#{post.id}") %>
         </div>
       </div>
     <% end %>

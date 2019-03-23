@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get "login" => "users#login_form"
   get "users/:id/partner_pay" => "users#partner_pay"
   
-  get "posts/index" => "posts#index"
+  get "posts/index/:id" => "posts#index"
   get "posts/new" => "posts#new"
   get "posts/:id" => "posts#show"
   post "posts/create" => "posts#create"
