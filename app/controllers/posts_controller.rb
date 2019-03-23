@@ -8,7 +8,6 @@ class PostsController < ApplicationController
   
   def show
     @post = Post.find_by(id: params[:id])
-    @user = @post.user
   end
   
   def month_index
@@ -46,7 +45,7 @@ class PostsController < ApplicationController
     
     if @post.save
       flash[:notice] = "投稿を作成しました"
-      redirect_to("/posts/index")
+      redirect_to("/posts/index/#{@current_user.id}")
     else
       render("posts/new")
     end

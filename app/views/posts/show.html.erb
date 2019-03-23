@@ -7,7 +7,7 @@
         <% else %>
           <img src="<%= "/user_images/#{@post.user.image_partner}" %>">
         <% end %>
-        <%= link_to(@post.pay_name, "/users/#{@user.id}") %>
+        <%= link_to(@post.pay_name, "/users/#{@current_user.id}") %>
       </div>
       <p><%= "カテゴリ：#{@post.category.name}" %></p>
       <p><%= "支払額：#{@post.payment}円" %></p>

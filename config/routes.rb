@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get "login" => "users#login_form"
   get "users/:id/partner_pay" => "users#partner_pay"
 
-  get "posts/:id/month/:pay_month" => "posts#monthly_total" 
+  get "posts/month/:id/:pay_month" => "posts#monthly_total" 
   get "posts/month_index/:id" => "posts#month_index"
   get "posts/index/:id" => "posts#index"
   get "posts/new" => "posts#new"

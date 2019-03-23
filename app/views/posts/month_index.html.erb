@@ -10,7 +10,7 @@
           <img src="<%= "/user_images/doller_b.png" %>">
         </div>
           <div class="post-right">
-            <%= link_to("#{f.pay_month.to_s(:month)}の生活費","/posts/#{@current_user.id}/month/#{f.pay_month}") %>
+            <%= link_to("#{f.pay_month.to_s(:month)}の生活費","/posts/month/#{@current_user.id}/#{f.pay_month}") %>
           </div>
       </div>
     <% end %>
