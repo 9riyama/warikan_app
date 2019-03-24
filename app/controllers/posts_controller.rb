@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_user
-  before_action :ensure_correct_user, {only: [:month_index, :monthly_total,:edit, :update, :destroy]}
+  before_action :ensure_correct_user, {only: [:edit, :update, :destroy]}
+  before_action :ensure_correct_post, {only: [:month_index, :monthly_total]}
   
   def index
     @posts = Post.page(params[:page]).per(5).where(user_id: params[:id]).order('pay_month DESC').order('updated_at DESC')
@@ -76,6 +77,13 @@ class PostsController < ApplicationController
   def ensure_correct_user
     @post = Post.find_by(id: params[:id])
     if @post.user_id != @current_user.id
+      flash[:notice] = "権限がありません"
+      redirect_to("/posts/index/#{@current_user.id}")
+    end
+  end
+  
+  def ensure_correct_post
+    if @current_user.id != params[:id].to_i
       flash[:notice] = "権限がありません"
       redirect_to("/posts/index/#{@current_user.id}")
     end
