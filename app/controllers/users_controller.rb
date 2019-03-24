@@ -69,25 +69,7 @@ class UsersController < ApplicationController
       render("users/edit")
     end
   end
-  
-  def month_index
-    @user = User.find_by(id: params[:id])
-    @month_index = @user.month_posts
-  end
-  
-  def monthly_total
-  @user = User.find_by(id: params[:id])
-  @posts = Post.where(user_id: params[:id]).where(pay_month: params[:pay_month])
-  @total = @posts.sum("payment")
-  @warikan = @total / 2
-  @user_total = @posts.where(pay_name: @user.name).sum("payment")
-  @user_pay = @user_total - @warikan
-  @partner_total = @posts.where(pay_name: @user.partner_name).sum("payment")
-  @partner_pay = @partner_total - @warikan
-  @chart = [[@user.name, @user_total], [@user.partner_name, @partner_total]]
-  end
-  
-  
+
   def login_form
   end
   

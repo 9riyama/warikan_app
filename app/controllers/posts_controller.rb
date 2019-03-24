@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user
-  before_action :ensure_correct_user, {only: [:edit, :update, :destroy]}
+  before_action :ensure_correct_user, {only: [:month_index, :monthly_total,:edit, :update, :destroy]}
   
   def index
     @posts = Post.page(params[:page]).per(5).where(user_id: params[:id]).order('pay_month DESC').order('updated_at DESC')

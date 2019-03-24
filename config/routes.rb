@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
   
-  get "users/:id/posts/:pay_month" => "users#monthly_total"
-  get  "users/:id/month_index" => "users#month_index"
   post "users/:id/update" => "users#update"
   get "users/:id/edit" => "users#edit"
   post "users/create" => "users#create"

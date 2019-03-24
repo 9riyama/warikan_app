@@ -26,10 +26,7 @@
             <%= link_to("投稿一覧", "/posts/index/#{@current_user.id}") %>
           </li>
           <li>
-          <%= link_to "月別生活費", "/users/#{@current_user.id}/month_index" %>
-          </li>
-          <li>
-          <%= link_to "post月別生活費", "/posts/month_index/#{@current_user.id}" %>
+          <%= link_to "月別生活費", "/posts/month_index/#{@current_user.id}" %>
           </li>
           <li>
             <%= link_to("新規投稿", "/posts/new") %>
