@@ -1,16 +1,21 @@
 Rails.application.routes.draw do
   
-  resources :home
+  root 'home#top' 
+  get '/:about', to: 'home#about'
   
-  post "users/:id/update" => "users#update"
-  get "users/:id/edit" => "users#edit"
-  post "users/create" => "users#create"
-  get "signup" => "users#new"
-  get "users/:id" => "users#show"
-  post "login" => "users#login"
-  post "logout" => "users#logout"
-  get "login" => "users#login_form"
-  get "users/:id/partner_pay" => "users#partner_pay"
+  
+  resources :users, only: [:edit, :create, :new, :show] do
+    collection do
+      post:login
+      post:logout
+      get:login_form
+    end
+
+    member do
+      post:update
+      get:partner_pay
+    end
+  end
 
   get "posts/month/:id/:pay_month" => "posts#monthly_total" 
   get "posts/month_index/:id" => "posts#month_index"
@@ -21,8 +26,5 @@ Rails.application.routes.draw do
   get "posts/:id/edit" => "posts#edit"
   post "posts/:id/update" => "posts#update"
   post "posts/:id/destroy" => "posts#destroy"
-
-  get "/" => "home#top"
-  get "about" => "home#about"
 
 end

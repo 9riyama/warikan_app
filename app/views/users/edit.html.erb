@@ -9,7 +9,7 @@
           </div>
         <% end %>
       
-        <%= form_tag("/users/#{@user.id}/update", {multipart: true}) do %>
+        <%= form_tag("/users/#{@user.id}", {multipart: true}) do %>
           <p>ユーザー名</p>
           <input name="name" value="<%= @user.name %>">
           <p>パートナー名</p>
