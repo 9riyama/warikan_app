@@ -17,14 +17,10 @@ Rails.application.routes.draw do
     end
   end
 
-  get "posts/month/:id/:pay_month" => "posts#monthly_total" 
-  get "posts/month_index/:id" => "posts#month_index"
-  get "posts/index/:id" => "posts#index"
-  get "posts/new" => "posts#new"
-  get "posts/:id" => "posts#show"
-  post "posts/create" => "posts#create"
-  get "posts/:id/edit" => "posts#edit"
-  post "posts/:id/update" => "posts#update"
-  post "posts/:id/destroy" => "posts#destroy"
+  resources :posts, only: [:new, :show, :destroy, :edit, :create, :update] 
+  
+  get 'posts/month/:id/:pay_month', to: 'posts#monthly_total'
+  get 'posts/month_index/:id', to: 'posts#month_index'
+  get 'posts/index/:id', to: 'posts#index'
 
 end
