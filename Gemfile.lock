@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/thoughtbot/shoulda-matchers.git
+  revision: 4b160bd19ecca7f97d7ac22dccd5fde9b0da5a9f
+  branch: rails-5
+  specs:
+    shoulda-matchers (3.1.2)
+      activesupport (>= 4.2.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -67,6 +75,11 @@ GEM
     diff-lcs (1.3)
     erubi (1.8.0)
     execjs (2.7.0)
+    factory_bot (4.10.0)
+      activesupport (>= 3.0.0)
+    factory_bot_rails (4.10.0)
+      factory_bot (~> 4.10.0)
+      railties (>= 3.0.0)
     ffi (1.10.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
@@ -137,23 +150,23 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
-    rspec-core (3.8.0)
-      rspec-support (~> 3.8.0)
-    rspec-expectations (3.8.2)
+    rspec-core (3.6.0)
+      rspec-support (~> 3.6.0)
+    rspec-expectations (3.6.0)
       diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.8.0)
-    rspec-mocks (3.8.0)
+      rspec-support (~> 3.6.0)
+    rspec-mocks (3.6.0)
       diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.8.0)
-    rspec-rails (3.8.2)
+      rspec-support (~> 3.6.0)
+    rspec-rails (3.6.1)
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       railties (>= 3.0)
-      rspec-core (~> 3.8.0)
-      rspec-expectations (~> 3.8.0)
-      rspec-mocks (~> 3.8.0)
-      rspec-support (~> 3.8.0)
-    rspec-support (3.8.0)
+      rspec-core (~> 3.6.0)
+      rspec-expectations (~> 3.6.0)
+      rspec-mocks (~> 3.6.0)
+      rspec-support (~> 3.6.0)
+    rspec-support (3.6.0)
     ruby_dep (1.5.0)
     sass (3.7.3)
       sass-listen (~> 4.0.0)
@@ -171,6 +184,8 @@ GEM
       rake
     spring (2.0.2)
       activesupport (>= 4.2)
+    spring-commands-rspec (1.0.4)
+      spring (>= 0.9.1)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
       spring (>= 1.2, < 3.0)
@@ -211,6 +226,7 @@ DEPENDENCIES
   chartable
   chartkick
   coffee-rails (= 4.2.2)
+  factory_bot_rails (~> 4.10.0)
   jbuilder (= 2.7.0)
   jquery-rails (= 4.3.1)
   kaminari (~> 0.17.0)
@@ -220,9 +236,11 @@ DEPENDENCIES
   puma (= 3.9.1)
   rails (= 5.1.6)
   rails-i18n
-  rspec-rails
+  rspec-rails (~> 3.6.0)
   sass-rails (= 5.0.6)
+  shoulda-matchers!
   spring (= 2.0.2)
+  spring-commands-rspec
   spring-watcher-listen (= 2.0.1)
   sqlite3 (= 1.3.13)
   turbolinks (= 5.0.1)

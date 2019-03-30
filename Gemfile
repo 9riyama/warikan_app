@@ -19,7 +19,8 @@ gem 'rails-i18n'
 group :development, :test do
   gem 'sqlite3', '1.3.13'
   gem 'byebug',  '9.0.6', platform: :mri
-  gem 'rspec-rails'
+  gem 'rspec-rails', '~> 3.6.0'
+  gem 'factory_bot_rails', '~> 4.10.0'
 end
 
 group :development do
@@ -27,10 +28,17 @@ group :development do
   gem 'listen',                '3.1.5'
   gem 'spring',                '2.0.2'
   gem 'spring-watcher-listen', '2.0.1'
+  gem 'spring-commands-rspec'
 end
 
 group :production do
   gem 'pg', '0.20.0'
+end
+
+group :test do
+  gem 'shoulda-matchers',
+    git: 'https://github.com/thoughtbot/shoulda-matchers.git',
+    branch: 'rails-5'
 end
 
 # Windows環境ではtzinfo-dataというgemを含める必要があります
