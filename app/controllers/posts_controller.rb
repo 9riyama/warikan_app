@@ -58,7 +58,13 @@ class PostsController < ApplicationController
   
   def update
     @post = Post.find_by(id: params[:id])
+    @post.pay_name = params[:pay_name]
+    @post.payment = params[:payment]
+    @post.category_id = params[:category_id][:keys].to_i
     @post.content = params[:content]
+    @post.pay_month = Time.zone.local(params[:pay_month]["date(1i)"].to_i, 
+                                 params[:pay_month]["date(2i)"].to_i, 
+                                 params[:pay_month]["date(3i)"].to_i)
     if @post.save
       flash[:notice] = "投稿を編集しました"
       redirect_to("/posts/index/#{@current_user.id}")
