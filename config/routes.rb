@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get '/:about', to: 'home#about'
   
   
-  resources :users, only: [:edit, :create, :new, :show] do
+  resources :users, only: [:edit, :create, :new, :show, :update] do
     collection do
       post:login
       post:logout
@@ -12,7 +12,6 @@ Rails.application.routes.draw do
     end
 
     member do
-      post:update
       get:partner_pay
     end
   end
