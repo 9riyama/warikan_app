@@ -12,7 +12,7 @@ class PostsController < ApplicationController
   end
   
   def month_index
-   @monthly_posts = Post.page(params[:page]).per(5).where(user_id: params[:id]).group("pay_month").order(pay_month: "desc")
+   @monthly_posts = Post.page(params[:page]).per(5).where(user_id: params[:id]).group("pay_month").sum(:payment).order(pay_month: "desc")
   end
   
   def monthly_total
