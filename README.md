@@ -1,24 +1,19 @@
-# README
+生活費をワリカンしている方向けのワリカン額計算サービスです。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+・アプリケーションの機能一覧
 
-Things you may want to cover:
+　記事一覧表示機能
+　記事詳細表示機能
+　記事投稿機能
+　管理ユーザ登録機能
+　管理ユーザログイン機能
+　画像ファイルのアップロード機能
+　DBテーブルのリレーション機能
+　ページネーション機能
+　単体テスト機能
 
-* Ruby version
+・アプリケーション内で使用している技術一覧
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+  インフラ　heroku
+  DB PostgreSQL
+  
