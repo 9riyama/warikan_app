@@ -14,13 +14,11 @@
              <p><%= "　ワリカンすると？一人当たり：#{@warikan.to_s(:delimited)}円" %>
           </div>
             <p><% if @user_total > @partner_total %></p>
-           <P><img src="<%= "/user_images/#{@user.image_partner}" %>">
-              <%= "【#{@user.partner_name}】は"%></p>
-           <P><img src="<%= "/user_images/#{@user.image_name}" %>">
-              <%= "【#{@user.name}】に#{@user_pay.to_s(:delimited)}円渡してね" %></P>
-         <% else %>
-           <P><img src="<%= "/user_images/#{@user.image_name}" %>"><%= "#{@user.name}は" %></p>
-           <P><%= "{@user.partner_name}に#{@partner_pay.to_s(:delimited)}円渡してね" %></P>
+              <P><img src="<%= "/user_images/#{@user.image_partner}" %>"><%= " #{@user.partner_name}は"%></p>
+            <P><img src="<%= "/user_images/#{@user.image_name}" %>"><%= " #{@user.name}に#{@user_pay.to_s(:delimited)}円渡してね" %></P>
+            <% else %>
+              <P><img src="<%= "/user_images/#{@user.image_name}" %>"><%= " #{@user.name}は" %></p>
+              <P><img src="<%= "/user_images/#{@user.image_partner}" %>"><%= " #{@user.partner_name}に#{@partner_pay.to_s(:delimited)}円渡してね" %></P>
          <% end %>
       </div><div class="monthly-show-right"><%= pie_chart @chart %></p></div>
     </div>
