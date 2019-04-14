@@ -3,7 +3,7 @@
     <% @posts.each do |post| %>
       <div class="posts-index-item">
         <div class="post-left">
-          <% if post.pay_name == @current_user.name %>
+          <% if post.pay_name == "1" %>
             <img src="<%= "/user_images/#{post.user.image_name}" %>">
           <% else %>
             <img src="<%= "/user_images/#{post.user.image_partner}" %>">
@@ -13,8 +13,11 @@
           <div class="post-user-name">
             <%= link_to(post.pay_month.to_s(:month), "/users/#{post.user.id}") %>
           </div>
-          <%= link_to("支払者：#{post.pay_name} 支払額： #{post.payment}円
-          カテゴリ： #{post.category.name}", "/posts/#{post.id}") %>
+            <% if post.pay_name == "1" %>
+              <%= link_to("支払者：#{post.user.name} 支払額： #{post.payment}円 カテゴリ： #{post.category.name}", "/posts/#{post.id}") %>
+            <% else %>
+              <%= link_to("支払者：#{post.user.partner_name} 支払額： #{post.payment}円 カテゴリ： #{post.category.name}", "/posts/#{post.id}") %>
+            <% end %>
         </div>
       </div>
     <% end %>

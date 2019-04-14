@@ -10,7 +10,7 @@
             </div>
           <% end %>
           <p>支払者</p>
-            <p><%= select_tag 'pay_name', options_for_select([@current_user.name, @current_user.partner_name]) %></p>
+            <p><%= select_tag 'pay_name', options_for_select({ @current_user.name => 1, @current_user.partner_name => 2 }) %></p>
           <p>支払月</p>
             <p><%= date_select :pay_month, :date, :discard_day => true, :use_month_numbers => true %></p>
           <p>カテゴリ</p>
